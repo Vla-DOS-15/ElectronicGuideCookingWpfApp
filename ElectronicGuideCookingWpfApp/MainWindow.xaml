@@ -1,0 +1,43 @@
+﻿<Window x:Class="ElectronicGuideCookingWpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ElectronicGuideCookingWpfApp"
+        mc:Ignorable="d"
+        Title="Електронний довідник з кулінарії" Height="738" Width="1248">
+    <Grid Margin="0,0,0,-6" Background="Wheat">
+        <Image x:Name="image" Margin="26,153,820,255" />
+        <TextBox x:Name="tbDescription" Background="Wheat" FontSize="20px" Foreground="Black" Margin="466,142,74,463" TextWrapping="Wrap"/>
+        <TextBox x:Name="tbTitle" Margin="43,35,867,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="46"/>
+        <ListBox Name="listBox" HorizontalContentAlignment="Stretch" Background="Wheat" Margin="466,324,74,10">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Products}" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Label x:Name="label" Content="Продукти" HorizontalAlignment="Left" FontSize="20px"  Margin="468,282,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboBox" Margin="820,35,97,645" ItemsSource="{Binding ItemsForRoles}" DisplayMemberPath="Title"
+                  SelectedValuePath="Id"
+                  SelectedValue="{Binding Path=Id}" 
+                  DropDownClosed="comboBox_DropDownClosed">
+
+        </ComboBox>
+        <Button x:Name="btnSearch" Content="Пошук" Margin="703,35,450,645" Click="btnSearch_Click"/>
+        <TextBox x:Name="tbSearch" Margin="422,35,583,645" TextWrapping="Wrap" Text=""/>
+        <Label x:Name="labelCookingTime" Content="" HorizontalAlignment="Left" Margin="222,86,0,0" VerticalAlignment="Top" FontSize="20" Width="61"/>
+        <Label x:Name="label1" Content="Час приготування:" HorizontalAlignment="Left" Margin="43,86,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox x:Name="tbMinCookingTime" HorizontalAlignment="Left" Margin="69,544,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="20"/>
+        <TextBox x:Name="tbMaxCookingTime" HorizontalAlignment="Left" Margin="69,620,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="20"/>
+        <Label x:Name="label3" Content="Мінімальний час приготування" HorizontalAlignment="Left" Margin="69,502,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label x:Name="label3_Copy" Content="Максимальний час приготування" HorizontalAlignment="Left" Margin="69,578,0,0" VerticalAlignment="Top" FontSize="20"/>
+
+    </Grid>
+</Window>
