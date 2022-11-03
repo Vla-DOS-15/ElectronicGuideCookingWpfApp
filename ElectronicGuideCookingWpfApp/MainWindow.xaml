@@ -9,7 +9,7 @@
     <Grid Margin="0,0,0,-6" Background="Wheat">
         <Image x:Name="image" Margin="26,153,820,255" />
         <TextBox x:Name="tbDescription" Background="Wheat" FontSize="20px" Foreground="Black" Margin="466,142,74,463" TextWrapping="Wrap"/>
-        <TextBox x:Name="tbTitle" Margin="43,35,867,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="46"/>
+        <TextBox x:Name="tbTitle" Margin="43,35,867,647" TextWrapping="Wrap"/>
         <ListBox Name="listBox" HorizontalContentAlignment="Stretch" Background="Wheat" Margin="466,324,74,10">
             <ListBox.ItemTemplate>
                 <DataTemplate>
